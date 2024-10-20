@@ -1,4 +1,4 @@
-# Sistema de casa de eventos | React Vite Node Docker | Santander DevOps 1182
+# Sistema de casa de eventos | React Vite Node Container Docker | Santander DevOps 1182
 
 ##  Tecnologias Utilizadas do Projeto Frontend:
 - React
