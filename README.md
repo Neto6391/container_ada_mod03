@@ -1,6 +1,6 @@
 # Sistema de casa de eventos | React Vite Node Container Docker | Santander DevOps 1182
 
-![Print da HomePage](image.png)
+![Print da HomePage](https://github.com/user-attachments/assets/80e3cd24-55df-44e1-a2af-4ffc208e29ef)
 
 ## Tecnologias Utilizadas
 
