@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 
 import Cabecalho from "../../components/Cabecalho/cabecalho";
 import Rodape from "../../components/Rodape/rodape";
+import { Title } from "../Homepage/homepage.styles";
 
 
 function DetalhesEvento() {
@@ -12,7 +13,7 @@ function DetalhesEvento() {
         <>
 
             <Cabecalho />
-            <h1>Detalhes do Evento { id }</h1>
+            <Title>Detalhes do Evento {id}</Title>
             <Rodape />
 
         </>

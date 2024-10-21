@@ -10,6 +10,7 @@ class User:
             "id": self.id,
             "nome": self.name,
             "email": self.email,
+            "senha": self.password,
         }
     
     def check_password(self, password: str):

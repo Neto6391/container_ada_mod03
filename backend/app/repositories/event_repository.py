@@ -13,3 +13,28 @@ class EventRepository:
 
     def get_all_events(self):
         return [event.to_dict() for event in self.events]
+    
+    def delete_event(self, event_id):
+        event_to_delete = next((event for event in self.events if event.id == event_id), None)
+
+        if event_to_delete is None:
+            return False
+
+        self.events.remove(event_to_delete)
+        return True
+    
+    def add_event(self, event_data):
+        new_id = str(len(self.events) + 1)
+        
+        new_event = Event(
+            new_id, 
+            event_data['titulo'], 
+            event_data['data'], 
+            event_data['horario'], 
+            event_data['preco'], 
+            event_data['url_da_imagem'], 
+            event_data['evento_privado']
+        )
+        
+        self.events.append(new_event)
+        return new_event.to_dict()

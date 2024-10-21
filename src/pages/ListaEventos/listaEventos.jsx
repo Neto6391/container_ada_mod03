@@ -7,18 +7,18 @@ import 'react-toastify/dist/ReactToastify.css';
 import Cabecalho from '../../components/Cabecalho/cabecalho'
 import Rodape from '../../components/Rodape/rodape'
 
-import { 
-    ListaContainer, 
-    ListaTitulo, 
-    Tabela, 
-    CabecalhoTabela, 
-    CabecalhoLinha, 
-    CabecalhoItem, 
-    CorpoTabela, 
+import {
+    ListaContainer,
+    ListaTitulo,
+    Tabela,
+    CabecalhoTabela,
+    CabecalhoLinha,
+    CabecalhoItem,
+    CorpoTabela,
     Evento,
     EventoItem,
-    BotaoRemover 
-   } from './listaEventos.styles'
+    BotaoRemover
+} from './listaEventos.styles'
 
 function ListaEventos() {
 
@@ -33,9 +33,9 @@ function ListaEventos() {
                 position: "top-right",
                 autoClose: 3000,
             });
-           
+
         } catch (error) {
-            toast.error('Ocorreu um erro ao deletar a mensagem! ' + error , {
+            toast.error('Ocorreu um erro ao deletar a mensagem! ' + error, {
                 position: "top-right",
                 autoClose: 3000,
             });
@@ -55,7 +55,7 @@ function ListaEventos() {
 
         }
         listarEventos();
-    })
+    }, [])
     return (
         <>
             <Cabecalho />
@@ -75,11 +75,11 @@ function ListaEventos() {
                     <CorpoTabela>
                         {eventos.map((evento, index) => (
                             <Evento key={index}>
-                                <EventoItem>{ evento.titulo }</EventoItem>
-                                <EventoItem>{ evento.data } - {evento.horario}</EventoItem>
-                                <EventoItem>{ evento.preco }</EventoItem>
-                                <EventoItem>{ evento.url_da_imagem }</EventoItem>
-                                <EventoItem>{ evento.evento_privado ? 'Sim' : 'Não'}</EventoItem>
+                                <EventoItem>{evento.titulo}</EventoItem>
+                                <EventoItem>{evento.data} - {evento.horario}</EventoItem>
+                                <EventoItem>{evento.preco}</EventoItem>
+                                <EventoItem>{evento.url_da_imagem}</EventoItem>
+                                <EventoItem>{evento.evento_privado ? 'Sim' : 'Não'}</EventoItem>
                                 <EventoItem>
                                     <BotaoRemover onClick={() => { excluirEvento(evento.id) }}>Excluir</BotaoRemover>
                                 </EventoItem>
