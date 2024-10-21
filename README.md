@@ -15,25 +15,6 @@
 - Styled Components
 - Axios
 - React Toastify
-- Json Server
-
-## Participantes do projeto
-
-- Aluno 01
-- Aluno 02
-- Aluno 03
-
-## Responsaveis pelo desenvolvimento:
-
-### Aluno 01
-
-- Criou o componente de rotas
-- Foi responsável pelo CSS
-
-### Aluno 02
-
-- Criou a página de login
-- Criou o Componente de cabeçalho
 
 ## Instruções de Instalação
 
@@ -89,6 +70,9 @@ Publicar no Docker Hub
 docker push <tag do usuario do docker hub>/<tag do nome da imagem>:<tag da versão>
 docker push vapeprosper/casa-de-eventos-react:v.1
 ```
+
+## Imagem Docker Hub
+https://hub.docker.com/r/netorodrigues/casa-de-eventos-react
 
 ## Agradecimentos
 Codigos de React, Vite, Node e estruturação completa: https://github.com/roofranklin
