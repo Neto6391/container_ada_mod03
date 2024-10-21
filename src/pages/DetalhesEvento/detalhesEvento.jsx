@@ -1,23 +1,20 @@
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom'
 
-import Cabecalho from "../../components/Cabecalho/cabecalho";
-import Rodape from "../../components/Rodape/rodape";
-import { Title } from "../Homepage/homepage.styles";
+import Cabecalho from '../../components/Cabecalho/cabecalho'
+import Rodape from '../../components/Rodape/rodape'
 
-
-function DetalhesEvento() {
+function DetalhesEvento () {
 
     const { id } = useParams();
 
     return (
         <>
-
             <Cabecalho />
-            <Title>Detalhes do Evento {id}</Title>
+            <h1>Detalhes do evento { id }</h1>
             <Rodape />
-
         </>
     )
-}
 
-export default DetalhesEvento
+} 
+
+export default DetalhesEvento;

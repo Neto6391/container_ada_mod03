@@ -1,25 +1,25 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import Logo from '../Logo/logo';
-import Menu from '../Menu/menu';
+import Logo from "../Logo/logo";
+import Menu from "../Menu/menu";
 
-const CabecalhoContainer = styled.div `
+const CabecalhoContainer = styled.div`
     width: 100%;
     height: 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
-    background-color: #5F6F52;
-    color: #FEFAE0;
+    background-color: #1F0049;
+    color: #FFFFFF;
 `
 
 function Cabecalho() {
-    return(
+    return (
         <CabecalhoContainer>
             <Logo />
             <Menu />
-       </CabecalhoContainer>
+        </CabecalhoContainer>
     )
 }
 

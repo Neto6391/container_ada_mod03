@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect, useMemo } from 'react'
+import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 
 import Cabecalho from '../../components/Cabecalho/cabecalho'
 import Rodape from '../../components/Rodape/rodape'
@@ -19,10 +18,10 @@ import {
     EventoItem,
     BotaoRemover
 } from './listaEventos.styles'
-
 function ListaEventos() {
 
     const [eventos, setEventos] = useState([]);
+    const [filtroTitulo, setFiltroTitulo] = useState('');
 
     const excluirEvento = async (id) => {
         try {
@@ -33,7 +32,6 @@ function ListaEventos() {
                 position: "top-right",
                 autoClose: 3000,
             });
-
         } catch (error) {
             toast.error('Ocorreu um erro ao deletar a mensagem! ' + error, {
                 position: "top-right",
@@ -42,25 +40,39 @@ function ListaEventos() {
         }
     }
 
-
     useEffect(() => {
         const listarEventos = async () => {
             try {
                 const response = await axios.get('http://localhost:3000/eventos');
                 setEventos(response.data);
-
             } catch (error) {
-                console.error('Erro ao buscar evento', error);
+                console.error('Erro ao buscar eventos', error);
             }
-
         }
         listarEventos();
     }, [])
+
+    const eventosFiltrados = useMemo(() => {
+        return eventos.filter(evento =>
+            evento.titulo.toLowerCase().includes(filtroTitulo.toLowerCase())
+        );
+    }, [eventos, filtroTitulo]);
+
+    const handleInputChange = (e) => {
+        setFiltroTitulo(e.target.value);
+    }
+
     return (
         <>
             <Cabecalho />
             <ListaContainer>
                 <ListaTitulo>Lista de Eventos cadastrados</ListaTitulo>
+                <input
+                    type="text"
+                    placeholder="Procure por eventos"
+                    value={filtroTitulo}
+                    onChange={handleInputChange}
+                />
                 <Tabela>
                     <CabecalhoTabela>
                         <CabecalhoLinha>
@@ -73,7 +85,7 @@ function ListaEventos() {
                         </CabecalhoLinha>
                     </CabecalhoTabela>
                     <CorpoTabela>
-                        {eventos.map((evento, index) => (
+                        {eventosFiltrados.map((evento, index) => (
                             <Evento key={index}>
                                 <EventoItem>{evento.titulo}</EventoItem>
                                 <EventoItem>{evento.data} - {evento.horario}</EventoItem>
@@ -89,9 +101,8 @@ function ListaEventos() {
                 </Tabela>
                 <ToastContainer />
             </ListaContainer>
-            < Rodape />
+            <Rodape />
         </>
-    );
+    )
 }
-
-export default ListaEventos;
+export default ListaEventos

@@ -3,8 +3,8 @@ from app.models.user import User
 class UserRepository:
     def __init__(self):
         self.users = [
-            User("e41a", "Andreia", "andreia@andreia.com", "1234@"),
-            User("1ecc", "Karoline", "karol@karoline.com", "1234#")
+            User("77d2", "Gustavo", "gustavo@ig.com.br", "123456"),
+            User("62ce", "João", "joao@ig.com.br", "123456")
         ]
 
     def get_all_users(self):

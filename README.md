@@ -1,53 +1,77 @@
-# Sistema de casa de eventos | React Vite Node Container Docker | Santander DevOps 1182
+# Sistema de casa de eventos turma 1025
 
-##  Tecnologias Utilizadas do Projeto Frontend:
+![Print da Homepage](https://i.ibb.co/0BLwdMW/Screenshot-2024-02-19-at-16-30-28.png)
+
+## Tecnologias Utilizadas
+
 - React
 - Vite
-- Node v20.11.0
+- Node v20.5.1
 
-##  Dependências Utilizadas
+## Dependências Utilizadas
+
 - React Router
 - Styled Components
 - Axios
 - React Toastify
+- Json Server
 
+## Participantes do projeto
+
+- Aluno 01
+- Aluno 02
+- Aluno 03
+
+## Responsaveis pelo desenvolvimento:
+
+### Aluno 01
+
+- Criou o componente de rotas
+- Foi responsável pelo CSS
+
+### Aluno 02
+
+- Criou a página de login
+- Criou o Componente de cabeçalho
 
 ## Instruções de Instalação
-- Clonar o projeto com o comando abaixo:
+
+Clonar o projeto com o comando abaixo:
+
 ```sh
-git clone https://github.com/Neto6391/versionamento_ada_mod02.git
+git clone https://github.com/roofranklin/casa-de-eventos-react.git
 ```
 
+Entrar na pasta do projeto
 
+```sh
+cd casa-de-eventos-react
+```
 
+Instalar as dependencias
 
+```sh
+npm install
+```
 
+Instalar de maneira global o json-server (Caso você ainda não possua)
 
+```sh
+npm install -g json-server
+```
 
+## Instruções para rodar o projeto
 
+Digitar o comando abaixo para rodar em desenvolvimento
 
+```sh
+npm run dev
+```
 
+Digitar o comando abaixo para rodar o mock local
 
+```sh
+json-server --watch eventos.json
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### _Pronto! Seu projeto já estará rodando no endereço http://localhost:5173_

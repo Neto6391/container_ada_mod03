@@ -3,12 +3,11 @@ from app.models.event import Event
 class EventRepository:
     def __init__(self):
         self.events = [
-            Event("1", "Baile de Carnaval", "12/02/2024", "19:00", 40, 
-                "https://www.frinoticias.com.br/hf-conteudo/uploads/posts/2022/01/872_carnaval-2022-jpg.jpg", False),
-            Event("2", "Baile de Debutante", "28/02/2024", "19:00", 0, 
-                "https://cdnm.westwing.com.br/glossary/uploads/br/2021/05/17212845/Presente-de-15-anos.jpg", True),
-            Event("3", "Bodas João Paulo & Millena", "15/03/2024", "19:00", 0, 
-                "https://nossasbodas.com/wp-content/uploads/2021/03/Arte-Gratuita-Nossas-Bodas-de-Trigo-3-anos-de-casamento-1-scaled.jpg", True)
+            Event("1", "Formatura Colegio D. Pedro", "12/02/2024", "20:00", 0,"https://roofranklin.github.io/casa-de-eventos/img/formatura.jpeg", True),
+            
+            Event("2", "Concurso de Fantasias", "15/02/2024", "20:00", 40,"https://uniao.ugv.edu.br/content/uploads/2023/03/2K4A9490.jpg", False),
+            
+            Event("3", "Casamento Florinda e Girafales", "09/03/2024", "16:00", 0, "https://imgsapp.em.com.br/app/noticia_127983242361/2023/05/21/1496049/uma-cor-que-esta-totalmente-proibida-para-as-convidadas-de-acordo-com-a-etiqueta-de-casamento-e-o-branco-que-esta-reservado-para-as-noivas-a-nao-ser-que-o-casamento-seja-na-praia_1_55583.jpg", False)
         ]
 
     def get_all_events(self):

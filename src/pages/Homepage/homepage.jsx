@@ -1,13 +1,12 @@
-import { useState, useEffect, useMemo } from 'react';
-import { Container, Title, Slogan, Eventos, EventosLista } from './homepage.styles';
-import axios from 'axios';
-
+import { useState, useEffect, useMemo } from 'react'
+import { Container, Title, Slogan, Eventos, EventosLista } from './homepage.styles'
+import axios from 'axios'
 
 import Cabecalho from '../../components/Cabecalho/cabecalho'
 import Rodape from '../../components/Rodape/rodape'
 import Card from '../../components/Card/card'
-
 function Homepage() {
+
     const [eventos, setEventos] = useState([]);
     const [filtroTitulo, setFiltroTitulo] = useState('');
 
@@ -16,14 +15,12 @@ function Homepage() {
             try {
                 const response = await axios.get('http://localhost:3000/eventos');
                 setEventos(response.data);
-
             } catch (error) {
-                console.error('Erro ao buscar evento', error);
+                console.error('Erro ao buscar eventos', error);
             }
-
         }
         listarEventos();
-    }, []);
+    }, [])
 
     const eventosFiltrados = useMemo(() => {
         return eventos.filter(evento =>
@@ -33,13 +30,14 @@ function Homepage() {
 
     const handleInputChange = (e) => {
         setFiltroTitulo(e.target.value);
-    };
+    }
+
     return (
         <>
             <Cabecalho />
             <Container>
-                <Title>Bem Vindxs a AS!</Title>
-                <Slogan>Perfeito para celebrar.</Slogan>
+                <Title>Bem vindo a Casa de eventos!</Title>
+                <Slogan>Essa é a casa de festas que realiza sonhos.</Slogan>
                 <input
                     type="text"
                     placeholder="Procure por eventos"
@@ -59,13 +57,11 @@ function Homepage() {
                             />
                         ))}
                     </EventosLista>
-
                 </Eventos>
-
             </Container>
-            < Rodape />
+            <Rodape />
         </>
-    );
+    )
 }
 
-export default Homepage;
+export default Homepage

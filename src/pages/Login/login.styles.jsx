@@ -13,13 +13,12 @@ export const LoginTitle = styled.h1`
     text-align: center;
     font-size: 28px;
     font-weight: 400;
-    color: #363636 ;
-    
+    color: #1F0049;
 `
 
 export const Sidebar = styled.aside`
     color: #FFFFFF;
-    background-color: #5F6F52;
+    background-color: #1F0049;
     height: 100vh;
     width: 38%;
 `
@@ -40,7 +39,7 @@ export const Logo = styled.img`
 export const LoginContent = styled.main`
     width: 62%;
     height: 100vh;
-    background-color:#FEFAE0;
+    background-color: #E2D8A5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,7 +74,7 @@ export const FormInput = styled.input`
     line-height: 150%;
     font-weight: 400;
     border-radius: 4px;
-    background-color: #D7E4C0;
+    background-color: #f4f4f4;
 `
 
 export const FormButton = styled(Link)`
@@ -86,7 +85,7 @@ export const FormButton = styled(Link)`
     height: 44px;
     border: 1px solid transparent;
     border-radius: 22px;
-    background-color: #5F6F52;
+    background-color: #1F0049;
     color: #FFFFFF;
     font-size: 16px;
     font-weight: 700;
