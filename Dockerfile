@@ -3,6 +3,8 @@
 # ---------------------------------
 FROM python:3.10-alpine AS flask-build
 
+LABEL maintainer="neto6391@gmail.com"
+
 RUN apk add --no-cache gcc musl-dev libffi-dev openssl-dev
 
 RUN pip install --no-cache-dir poetry
@@ -39,6 +41,7 @@ RUN npm run build
 FROM python:3.10-alpine
 
 RUN apk add --no-cache nginx
+
 
 
 WORKDIR /app/backend
