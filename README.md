@@ -1,12 +1,13 @@
-# Sistema de casa de eventos turma 1025
+# Sistema de casa de eventos | React Vite Node Container Docker | Santander DevOps 1182
 
-![Print da Homepage](https://i.ibb.co/0BLwdMW/Screenshot-2024-02-19-at-16-30-28.png)
+![Print da HomePage](image.png)
 
 ## Tecnologias Utilizadas
 
 - React
 - Vite
 - Node v20.5.1
+- Docker
 
 ## Dependências Utilizadas
 
@@ -39,13 +40,13 @@
 Clonar o projeto com o comando abaixo:
 
 ```sh
-git clone https://github.com/roofranklin/casa-de-eventos-react.git
+git clone https://github.com/Neto6391/container_ada_mod03.git
 ```
 
 Entrar na pasta do projeto
 
 ```sh
-cd casa-de-eventos-react
+cd container_ada_mod03
 ```
 
 Instalar as dependencias
@@ -53,25 +54,41 @@ Instalar as dependencias
 ```sh
 npm install
 ```
-
-Instalar de maneira global o json-server (Caso você ainda não possua)
-
+## Instruções de Instalação
+Clonar o projeto com o comando abaixo:
 ```sh
-npm install -g json-server
+git clone git@github.com:Neto6391/container_ada_mod03.git
 ```
 
+Entrar no diretório do projeto:
+```sh
+cd container_ada_mod03
+```
+
+Instalar as dependencias
+```sh
+npm install
+```
 ## Instruções para rodar o projeto
 
-Digitar o comando abaixo para rodar em desenvolvimento
-
+Digitar o comando para criar a imagem do docker baseado nos requisitos definidos do Dockerfile, necessita está no diretório raiz do projeto
 ```sh
-npm run dev
+docker buildx buld -t casa-de-eventos-react .
+```
+Digitar o comando para rodar a imagem do docker em uma porta especifica
+```sh
+docker run -d -p 3000:3000 -p 5173:5173 casa-de-eventos-react
+```
+ projeto já estará rodando no endereço
+ ```sh
+http://localhost:5173
 ```
 
-Digitar o comando abaixo para rodar o mock local
-
+Publicar no Docker Hub
 ```sh
-json-server --watch eventos.json
+docker push <tag do usuario do docker hub>/<tag do nome da imagem>:<tag da versão>
+docker push vapeprosper/casa-de-eventos-react:v.1
 ```
 
-### _Pronto! Seu projeto já estará rodando no endereço http://localhost:5173_
+## Agradecimentos
+Codigos de React, Vite, Node e estruturação completa: https://github.com/roofranklin
